@@ -318,6 +318,7 @@ xpack.notification.email.account:
             host: smtp.gmail.com
             port: 587
             user: <username>
+            secure_password: <xpack.notification.email.account.gmail_account.smtp.secure_password>
 --------------------------------------------------
 
 In order to store the account SMTP password, use the keystore command
@@ -325,7 +326,7 @@ In order to store the account SMTP password, use the keystore command
 
 [source,yaml]
 --------------------------------------------------
-bin/elasticsearch-keystore xpack.notification.email.account.gmail_account.smtp.secure_password
+bin/elasticsearch-keystore add xpack.notification.email.account.gmail_account.smtp.secure_password
 --------------------------------------------------
 
 If you get an authentication error that indicates that you need to continue the
@@ -356,6 +357,7 @@ xpack.notification.email.account:
             host: smtp-mail.outlook.com
             port: 587
             user: <email.address>
+            secure_password: <xpack.notification.email.account.outlook_account.smtp.secure_password>
 --------------------------------------------------
 
 In order to store the account SMTP password, use the keystore command
@@ -363,7 +365,7 @@ In order to store the account SMTP password, use the keystore command
 
 [source,yaml]
 --------------------------------------------------
-bin/elasticsearch-keystore xpack.notification.email.account.outlook_account.smtp.secure_password
+bin/elasticsearch-keystore add xpack.notification.email.account.outlook_account.smtp.secure_password
 --------------------------------------------------
 
 
@@ -392,6 +394,7 @@ xpack.notification.email.account:
             host: email-smtp.us-east-1.amazonaws.com <1>
             port: 587
             user: <username>
+            secure_password: <xpack.notification.email.account.ses_account.smtp.secure_password>
 --------------------------------------------------
 <1> `smtp.host` varies depending on the region
 
@@ -400,7 +403,7 @@ In order to store the account SMTP password, use the keystore command
 
 [source,yaml]
 --------------------------------------------------
-bin/elasticsearch-keystore xpack.notification.email.account.ses_account.smtp.secure_password
+bin/elasticsearch-keystore add xpack.notification.email.account.ses_account.smtp.secure_password
 --------------------------------------------------
 
 NOTE:   You need to use your Amazon SES SMTP credentials to send email through
@@ -431,6 +434,7 @@ xpack.notification.email.account:
             host: <your exchange server>
             port: 587
             user: <email address of service account> <2>
+            secure_password: <xpack.notification.email.account.exchange_account.smtp.secure_password>
 --------------------------------------------------
 <1> Some organizations configure Exchange to validate that the `from` field is a
     valid local email account.
@@ -443,7 +447,7 @@ In order to store the account SMTP password, use the keystore command
 
 [source,yaml]
 --------------------------------------------------
-bin/elasticsearch-keystore xpack.notification.email.account.exchange_account.smtp.secure_password
+bin/elasticsearch-keystore add xpack.notification.email.account.exchange_account.smtp.secure_password
 --------------------------------------------------
 
 [float]
