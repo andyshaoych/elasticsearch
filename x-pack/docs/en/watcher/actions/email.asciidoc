@@ -392,6 +392,7 @@ xpack.notification.email.account:
             host: email-smtp.us-east-1.amazonaws.com <1>
             port: 587
             user: <username>
+            secure_password: <xpack.notification.email.account.gmail_account.smtp.secure_password>
 --------------------------------------------------
 <1> `smtp.host` varies depending on the region
 
@@ -431,6 +432,7 @@ xpack.notification.email.account:
             host: <your exchange server>
             port: 587
             user: <email address of service account> <2>
+            secure_password: <xpack.notification.email.account.gmail_account.smtp.secure_password>
 --------------------------------------------------
 <1> Some organizations configure Exchange to validate that the `from` field is a
     valid local email account.
